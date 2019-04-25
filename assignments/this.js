@@ -37,7 +37,38 @@ JS's call or apply method is used.
 // Principle 3
 
 // code example for New Binding
+function happyPerson(greeter) {
+    this.greeting = "hi ";
+    this.greeter = greeter;
+    this.talk = function() {
+        console.log(this.greeting + this.greeter);
+        console.log(this);
+    };
+}
 
+const Ty = new happyPerson("Tyrone");
+const Tyrone = new happyPerson("Ty");
+
+Ty.talk();
+Tyrone.talk();
 // Principle 4
 
 // code example for Explicit Binding
+function happyPerson(greeter) {
+    this.greeting = "hi ";
+    this.greeter = greeter;
+    this.talk = function() {
+        console.log(this.greeting + this.greeter);
+        console.log(this);
+    };
+}
+
+const Ty = new happyPerson("Tyrone");
+const Tyrone = new happyPerson("Ty");
+
+Ty.talk.call(Tyrone);
+Tyrone.talk.apply(Ty);
+
+
+Ty.talk();
+Tyrone.talk();
