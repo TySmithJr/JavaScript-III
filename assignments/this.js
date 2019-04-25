@@ -17,11 +17,23 @@ JS's call or apply method is used.
 // Principle 1
 
 // code example for Window Binding
+    function success(suctivebje) {
+        console.log(this);
+        return subjective;
+    }
+     success("wealth");
 
 // Principle 2
 
 // code example for Implicit Binding
-
+    const obj = {
+        greeting: "Hi",
+        sayHi: function(name) {
+            console.log(`${this.greetin} my name is Ty`);
+            console.log(this);
+        }
+    }
+    obj.sayHi("Ty")
 // Principle 3
 
 // code example for New Binding
